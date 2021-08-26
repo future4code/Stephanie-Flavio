@@ -112,6 +112,11 @@ table {
     width: 60%;
 }
 
+.alinhamento-imagens {
+    margin-left: 22%;
+    text-align: center;
+}
+
 td button {
     background-color: #fadf63;
     width: 150px;
