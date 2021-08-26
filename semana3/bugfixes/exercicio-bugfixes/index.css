@@ -112,6 +112,10 @@ table {
     width: 60%;
 }
 
+.tam-imagem {
+    width: 50px;
+}
+
 .alinhamento-imagens {
     margin-left: 22%;
     text-align: center;
