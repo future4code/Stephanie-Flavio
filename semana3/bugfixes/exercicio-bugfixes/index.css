@@ -53,7 +53,17 @@ div img {
 .container {
     height: 500px;
     text-align: center;
+
 }
+
+.container-button {
+    height: 500px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+
+}
+
 
 .icone {
     height: 15px;
