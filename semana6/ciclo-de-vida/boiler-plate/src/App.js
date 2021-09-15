@@ -51,13 +51,13 @@ class App extends React.Component {
   criaTarefa = () => {
     const novaTarefa= {
       id: Date.now(),
-      texto: this.state.textoNovaTarefa,
+      texto: this.state.inputValue,
       completa: false
     }
 
-    const novaListaDeTarefas = [...this.state.tarefas]
-    novaListaDeTarefas.push(novaTarefa)
-    this.setState({novaTarefa: novaListaDeTarefas})  
+    const novaListaDeTarefas = [novaTarefa, ...this.state.tarefas]
+    console.log(novaListaDeTarefas)
+    this.setState({tarefas: novaListaDeTarefas})  
   }
 
   selectTarefa = (id) => {
