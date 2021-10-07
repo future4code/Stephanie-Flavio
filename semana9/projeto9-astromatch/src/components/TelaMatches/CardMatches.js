@@ -1,12 +1,14 @@
 import React from "react"
 import { ListaItem, ImagemRedonda } from "./styled-card"
 
-const CardMatches = () => {
+const CardMatches = (props) => {
     return(
-        <ListaItem>
-            <ImagemRedonda src={"https://picsum.photos/50/50"}/>
-            <h2>Nome Pessoa</h2>
-        </ListaItem>
+        <div>
+            <ListaItem>
+                <ImagemRedonda src={props.photo}/>
+                <h2>{props.name}</h2>
+            </ListaItem>
+        </div>
     )
 }
 
