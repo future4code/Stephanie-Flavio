@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
+// import 'App.css'
 import TelaInicial from './components/TelaInicial/TelaInicial';
 import TelaMatches from './components/TelaMatches/TelaMatches';
+import {Footer,  TextFooter, TelaPrincipal, Header } from './components/TelaInicial/styled'
 
 const App = () => {
   const [telaAtual, setTelaAtual] = useState("inicial")
@@ -25,9 +27,17 @@ const App = () => {
   }
 
   return (
-    <div>
-      {mudarTela()}
-    </div>
+    <TelaPrincipal>
+      <Header>
+          <div>AstroMatch</div>
+      </Header>
+      <div>
+        {mudarTela()}
+      </div>
+      <Footer>
+          <TextFooter>Encontre seu par ideal.</TextFooter>
+      </Footer>
+    </TelaPrincipal>
   );
 }
 

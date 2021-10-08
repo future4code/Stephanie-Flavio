@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, {useState, useEffect} from 'react'
-import { TelaInicialContainer, Perfil, ImagemPerfil } from './styled'
+import { TelaInicialContainer, Perfil, ImagemPerfil} from './styled'
 
 const TelaInicial = (props) => {
     
