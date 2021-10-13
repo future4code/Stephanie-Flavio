@@ -1,11 +1,18 @@
 import React from 'react'
+import { useHistory } from 'react-router';
 
-export default function CreateTripPage() {
+export function CreateTripPage() {
+
+  const history = useHistory()
+
+  const goBack = () => {
+    history.goBack()
+  }
   return (
     <div>
         <header>
             <h1>Criar Viagem</h1>
-            <button>Voltar</button>
+            <button onClick={goBack}>Voltar</button>
         </header>
         <input placeholder="Nome"/>
         <select>
@@ -17,6 +24,7 @@ export default function CreateTripPage() {
         </selec>
         <input placeholder="Descrição"/>
         <input placeholder="Duração de dias"/>
+        <button>Criar</button>
     </div>
   );
 }

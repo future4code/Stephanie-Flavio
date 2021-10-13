@@ -1,11 +1,18 @@
 import React from 'react'
+import { useHistory } from 'react-router';
 
-export default function ApplicationFormPage() {
+export function ApplicationFormPage() {
+  
+  const history = useHistory()
+
+  const goBack = () => {
+    history.goBack()
+  }
   return (
     <div>
       <header>
         <h1>Inscreva-se para uma viagem</h1>
-        <button>Voltar</button>
+        <button onClick={goBack}>Voltar</button>
       </header>
       <select>
         <option>Escolha uma Viagem</option>

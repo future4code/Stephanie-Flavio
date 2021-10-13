@@ -1,14 +1,32 @@
 import React from 'react'
+import { useHistory } from 'react-router';
+import { CardsTrip } from './components/CardsTrip';
 
-export default function AdminHomePage() {
+export function AdminHomePage() {
+
+  const history = useHistory()
+
+  const goToHomePage = () => {
+    history.push("/")
+  }
+
+  const goToLoginPage = () => {
+    history.push("/login")
+  }
+
+  const goToCreateTripPage = () => {
+    history.push("/create")
+  }
+
   return (
     <div>
         <header>
             <h1>Painel Administrativo</h1>
-            <button>Voltar</button>
-            <button>Logout</button>
+            <button onClick={goToHomePage}>Voltar</button>
+            <button onClick={goToLoginPage}>Logout</button>
         </header>
-        <button>Criar Viagem</button>
+        <CardsTrip/>
+        <button onClick={goToCreateTripPage}>Criar Viagem</button>
     </div>
   );
 }

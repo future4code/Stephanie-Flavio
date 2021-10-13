@@ -1,13 +1,25 @@
 import React from 'react'
+import { useHistory } from 'react-router';
 
-export default function LoginPage() {
+export function LoginPage() {
+
+  const history = useHistory()
+
+  const goBack = () => {
+    history.goBack()
+  }
+
+  const goToAdminHomePage = () => {
+    history.push("/admin")
+  }
+
   return (
     <div>
         <h1>Login</h1>
-        <button>Voltar</button>
+        <button onClick={goBack}>Voltar</button>
         <input placeholder="E-mail"/>
         <input placeholder="Nome"/>
-        <button>Enviar</button>
+        <button onClick={goToAdminHomePage}>Enviar</button>
     </div>
   );
 }
