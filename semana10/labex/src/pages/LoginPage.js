@@ -17,7 +17,8 @@ export function LoginPage() {
     setPassword(e.target.value)
   }
 
-  const onSubmitLogin = () => {
+  const onSubmitLogin = (e) => {
+    e.preventDefault()
     console.log(email, password)
 
     const url = "https://us-central1-labenu-apis.cloudfunctions.net/labeX/stephanie-flavio-maryam/login"
@@ -45,20 +46,24 @@ export function LoginPage() {
   return (
     <div>
         <h1>Login</h1>
-        <button onClick={goBack}>Voltar</button>
-        <input 
-          placeholder="E-mail"
-          type="email"
-          value={email}
-          onChange={onChangeEmail}
-        />
-        <input
-          placeholder="password"
-          type="password"
-          value={password}
-          onChange={onChangePassword}
-        />
-        <button onClick={onSubmitLogin}>Enviar</button>
+        <form  onSubmit={onSubmitLogin}>
+          <button onClick={goBack}>Voltar</button>
+          <input 
+            placeholder="E-mail"
+            type="email"
+            value={email}
+            onChange={onChangeEmail}
+            required
+          />
+          <input
+            placeholder="password"
+            type="password"
+            value={password}
+            onChange={onChangePassword}
+            required
+          />
+          <button>Enviar</button>
+        </form>
     </div>
   );
 }
