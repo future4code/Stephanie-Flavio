@@ -2,6 +2,9 @@ import axios from 'axios';
 import React from 'react'
 import { useState } from 'react';
 import { useHistory } from 'react-router';
+import {TextField, Button} from '@material-ui/core';
+import { LoginForm } from './LoginStyled';
+import { PageTitle } from '../../components/PageTitle';
 
 export function LoginPage() {
   const [email, setEmail] = useState("")
@@ -35,6 +38,7 @@ export function LoginPage() {
     })
     .catch((err) => {
       console.log(err.data)
+      alert('Email ou senha incorreto. Tente novamente!')
     })
   }
 
@@ -45,25 +49,30 @@ export function LoginPage() {
 
   return (
     <div>
-        <h1>Login</h1>
-        <form  onSubmit={onSubmitLogin}>
-          <button onClick={goBack}>Voltar</button>
-          <input 
+        <PageTitle title={'Login'}/>
+        <Button onClick={goBack}>Voltar</Button>
+        <LoginForm  onSubmit={onSubmitLogin}>
+          <TextField 
             placeholder="E-mail"
             type="email"
             value={email}
             onChange={onChangeEmail}
             required
           />
-          <input
+          <TextField
             placeholder="password"
             type="password"
             value={password}
             onChange={onChangePassword}
             required
           />
-          <button>Enviar</button>
-        </form>
+          <Button
+            variant={'contained'} 
+            color={"primary"}
+            type={'submit'}>
+              Enviar
+          </Button>
+        </LoginForm>
     </div>
   );
 }

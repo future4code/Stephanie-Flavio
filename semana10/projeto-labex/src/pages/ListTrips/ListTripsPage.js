@@ -1,20 +1,10 @@
 import axios from 'axios';
 import React from 'react'
 import { useHistory } from 'react-router';
-import styled from "styled-components"
+import { FormCard } from './ListTripsStyled';
 import { useEffect, useState } from 'react';
-
-const FormCard = styled.div`
-display: flex;
-flex-direction: column;
-align-content: center;
-/* justify-items: center; */
-/* align-items: center; */
-justify-content: center;
-border: 1px solid black;
-width: 600px;
-height: 600px;
-`
+import { PageTitle } from '../../components/PageTitle';
+import { Button } from '@material-ui/core';
 
 export function ListTripsPage() {
 
@@ -42,7 +32,7 @@ export function ListTripsPage() {
   }
 
   const gotToApplicationFormPage = () => {
-    history.push("/form")
+    history.push("/trips/application")
   }
 
   const renderTrip = trips.map((trip) => {
@@ -58,9 +48,9 @@ export function ListTripsPage() {
   })
   return (
     <div>
-        <h1>Lista de Viagens</h1>
-        <button onClick={goBack}>Voltar</button>
-        <button onClick={gotToApplicationFormPage}>Inscrever-se</button>
+        <PageTitle title={'Lista de Viagens'}/>
+        <Button onClick={goBack}>Voltar</Button>
+        <Button onClick={gotToApplicationFormPage}>Inscrever-se</Button>
         <FormCard>
           {renderTrip}
         </FormCard>

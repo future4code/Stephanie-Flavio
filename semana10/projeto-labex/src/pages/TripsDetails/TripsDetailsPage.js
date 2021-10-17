@@ -1,7 +1,12 @@
+import { Button } from '@material-ui/core';
 import axios from 'axios';
 import React from 'react'
 import { useEffect } from 'react';
 import { useHistory } from 'react-router';
+import { PageTitle } from '../../components/PageTitle';
+import { CandidateList } from './components/CandidateList';
+import { TripInfo } from './components/TripInfoCard';
+import { ContentContainer } from './TripsDetailsStyled';
 
 const useProtectedPage = () => {
   const history = useHistory()
@@ -11,7 +16,7 @@ const useProtectedPage = () => {
 
     if(token === null){
       console.log('Não está logado!')
-      history.push('/login')
+      history.push()
     }
   }, )
 }
@@ -45,9 +50,13 @@ export function TripsDetailsPage() {
   }
   return (
     <div>
-      <h1>Detalhes da Viagem</h1>
-      <button onClick={goBack}>Voltar</button>
-      <button onClick={goToHomePage}>Home</button>
+      <PageTitle title={'Detalhes da Viagen'}/>
+      <Button onClick={goBack}>Voltar</Button>
+      <Button onClick={goToHomePage}>Home</Button>
+      <ContentContainer>
+        <TripInfo/>
+        <CandidateList/>
+      </ContentContainer>
     </div>
   );
 }
