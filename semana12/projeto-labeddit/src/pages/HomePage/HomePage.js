@@ -1,5 +1,7 @@
+import { Button, Typography } from '@mui/material';
 import React from 'react'
 import { useHistory } from 'react-router';
+import { HomeContainer } from './HomePageStyle';
 
 export function HomePage() {
 
@@ -10,10 +12,18 @@ export function HomePage() {
   }
 
   return (
-    <div>
-      Home
-      <button onClick={goToPageLogin}>Login</button>
-    </div>
+    <HomeContainer>
+      <Typography 
+        variant='h1'
+        align={'center'}
+        gutterBottom>
+          Home
+      </Typography>
+      <Button 
+        variant='outlined'
+        color='primary'
+        onClick={goToPageLogin}>Login</Button>
+    </HomeContainer>
   );
 }
 

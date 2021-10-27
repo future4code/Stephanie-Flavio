@@ -1,5 +1,6 @@
 import React from 'react'
 import { useHistory } from 'react-router'
+import { Header } from '../../components/Header/Header';
 
 export function PostPage() {
 
@@ -15,9 +16,12 @@ export function PostPage() {
 
   return (
     <div>
-      Post
-      <button onClick={goToPageLogin}>Logout</button>
-      <button onClick={goToPageFeed}>Feed</button>
+      <Header title={'Logout'}/>
+      <div>
+        Post
+        <button onClick={goToPageLogin}>Logout</button>
+        <button onClick={goToPageFeed}>Feed</button>
+      </div>
     </div>
   );
 }

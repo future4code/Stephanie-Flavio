@@ -1,5 +1,6 @@
 import React from 'react'
 import { useHistory } from 'react-router';
+import { Header } from '../../components/Header/Header';
 
 export function FeedPage() {
 
@@ -15,6 +16,7 @@ export function FeedPage() {
 
   return (
     <div>
+      <Header title={'Logout'}/>
       Feed
       <button onClick={goToPageLogin}>Logout</button>
       <button onClick={goToPagePost}>Post</button>
