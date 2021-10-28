@@ -3,11 +3,11 @@ export const goToLoginPage = (history) => {
 }
 
 export const goToApplicationPage = (history) => {
-    history.push('/login')
+    history.push('/application')
 }
 
 export const goToFeedPage = (history) => {
-    history.push('/login')
+    history.push('/feed')
 }
 
 export const goToPostPage = (history, id) => {

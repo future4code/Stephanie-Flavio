@@ -1,14 +1,12 @@
+import { Button } from '@mui/material';
 import React from 'react'
 import { useHistory } from 'react-router';
 import { Header } from '../../components/Header/Header';
+import { goToFeedPage } from '../../Routes/coordinator';
 
 export function FeedPage() {
 
   const history = useHistory()
-
-  const goToPageLogin = () => {
-    history.push('/login')
-  }
 
   const goToPagePost = () => {
     history.push('/post/:id')
@@ -16,10 +14,9 @@ export function FeedPage() {
 
   return (
     <div>
-      <Header title={'Logout'}/>
-      Feed
-      <button onClick={goToPageLogin}>Logout</button>
-      <button onClick={goToPagePost}>Post</button>
+      <Header goTo={() => goToFeedPage(history)} title={'Logout'}/>
+        Feed
+      <Button onClick={goToPagePost}>Post</Button>
     </div>
   );
 }
