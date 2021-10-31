@@ -6,6 +6,7 @@ import {FeedPage} from '../pages/FeedPage/FeedPage'
 import {PostPage} from '../pages/PostPage/PostPage'
 import {HomePage} from '../pages/HomePage/HomePage'
 import {ErrorPage} from '../pages/ErrorPage/ErrorPage'
+import { PostDetails } from "../pages/PostPage/PostDetails";
 
 export function Router () {
     return(
@@ -26,6 +27,10 @@ export function Router () {
   
           <Route exact path={"/post/:id"}>
             <PostPage/>
+          </Route>
+
+          <Route exact path={"/post/details/:id"}>
+            <PostDetails/>
           </Route>
   
           <Route exact path={"/"}>

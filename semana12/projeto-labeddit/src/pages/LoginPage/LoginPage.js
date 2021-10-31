@@ -3,24 +3,24 @@ import React from 'react'
 import { useHistory } from 'react-router';
 import { Header } from '../../components/Header/Header';
 import { Title } from '../../components/Title/Title';
-import { goToHomePage, goToFeedPage } from '../../Routes/coordinator';
+import { goToHomePage, goToApplicationPage } from '../../Routes/coordinator';
 import { LoginForm } from './LoginPageStyle';
 import {useForm} from '../../hooks/useForm'
+import { login } from '../../requisition/users';
+import { useUnprotectedPage } from '../../hooks/useUnprotectedPage';
+
 
 export function LoginPage() {
+
+  useUnprotectedPage()
 
   const [form, onChange, clear] = useForm({email: '', password: ''})
 
   const history = useHistory()
 
-  const goToPageApplication = () => {
-    history.push('/application')
-  }
-
   const onSubmitForm = (e) => {
-    console.log(form)
     e.preventDefault()
-
+    login(form, clear, history)
   }
 
   return (
@@ -48,12 +48,11 @@ export function LoginPage() {
 
           <Button 
             type={'submit'} 
-            onClick={() => goToFeedPage(history)}
             variant={'contained'}
             color={'primary'}>
               Entrar
             </Button>
-          <Button onClick={goToPageApplication}>Não possue conta? Cadastre-se</Button>
+          <Button onClick={() => goToApplicationPage(history)}>Não possue conta? Cadastre-se</Button>
 
         </LoginForm>
       </div>
