@@ -15,7 +15,6 @@ export const FeedCard = (props) => {
     props.handleVotePost(props.id, -1)
   }
 
-  console.log(props.post)
 
   return (
     <div>
